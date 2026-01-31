@@ -1,0 +1,207 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Share Tech Mono', monospace; /* Tipografía futurista */
+    background-color: #1a0a2e; /* Fondo oscuro */
+    color: #00ffcc; /* Color de texto neón */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; /* Efecto neón */
+}
+
+.game-container {
+    background-color: #2c0e4f; /* Contenedor oscuro */
+    border: 2px solid #00ffcc;
+    box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc inset; /* Resplandor neón */
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* Transición de color */
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif; /* Título principal */
+    font-size: 2.5em;
+    color: #ff00ea; /* Otro color neón */
+    margin-bottom: 20px;
+    text-shadow: 0 0 8px #ff00ea, 0 0 15px #ff00ea;
+}
+
+.accent {
+    color: #00ffcc;
+}
+
+.instructions {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.timer-display {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5em;
+    color: #ffea00; /* Amarillo neón para el tiempo */
+    margin-bottom: 25px;
+    text-shadow: 0 0 5px #ffea00;
+}
+
+.input-section {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+input[type="number"] {
+    background-color: #1a0a2e;
+    border: 2px solid #00ffcc;
+    color: #00ffcc;
+    padding: 12px 20px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    outline: none;
+    width: 150px;
+    text-align: center;
+    box-shadow: 0 0 10px #00ffcc;
+    transition: all 0.3s ease;
+}
+
+input[type="number"]::placeholder {
+    color: rgba(0, 255, 204, 0.5);
+}
+
+input[type="number"]:focus {
+    border-color: #ff00ea;
+    box-shadow: 0 0 15px #ff00ea;
+}
+
+button {
+    background-color: #ff00ea;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'Orbitron', sans-serif;
+    box-shadow: 0 0 10px #ff00ea;
+    transition: all 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+    background-color: #00ffcc;
+    box-shadow: 0 0 15px #00ffcc;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.feedback-section {
+    min-height: 80px; /* Para evitar saltos de layout */
+}
+
+.message {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: #00ffcc;
+}
+
+#feedbackMessage {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#previousGuesses {
+    font-size: 0.9em;
+    color: rgba(0, 255, 204, 0.7);
+}
+
+/* Clases para los estados de "temperatura" */
+.hot {
+    background-color: #4f0e0e; /* Rojo oscuro */
+    border-color: #ff0000;
+    box-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000 inset;
+}
+
+.warm {
+    background-color: #4f3b0e; /* Naranja oscuro */
+    border-color: #ffa500;
+    box-shadow: 0 0 20px #ffa500, 0 0 40px #ffa500 inset;
+}
+
+.cold {
+    background-color: #0e2f4f; /* Azul oscuro */
+    border-color: #00bfff;
+    box-shadow: 0 0 20px #00bfff, 0 0 40px #00bfff inset;
+}
+
+.win {
+    background-color: #0e4f0e; /* Verde oscuro */
+    border-color: #00ff00;
+    box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00 inset;
+    animation: winAnimation 1s infinite alternate; /* Animación para ganar */
+}
+
+@keyframes winAnimation {
+    from { transform: scale(1); }
+    to { transform: scale(1.02); }
+}
+
+.game-over-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none; /* Se oculta por defecto */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 15px;
+    text-shadow: 0 0 8px #ff00ea, 0 0 15px #ff00ea;
+}
+
+.game-over-screen.show {
+    display: flex;
+}
+
+#gameOverTitle {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3em;
+    color: #ff0000; /* Rojo para Game Over */
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #ff0000;
+}
+
+#secretNumberDisplay {
+    font-size: 1.8em;
+    color: #ffea00;
+    margin-bottom: 30px;
+}
+
+#restartButton {
+    background-color: #00ffcc;
+    color: #1a0a2e;
+    font-size: 1.3em;
+    padding: 15px 30px;
+    box-shadow: 0 0 10px #00ffcc;
+}
+
+#restartButton:hover {
+    background-color: #ff00ea;
+    box-shadow: 0 0 15px #ff00ea;
+}

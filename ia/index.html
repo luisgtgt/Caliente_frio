@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el Número Secreto | CyberGame</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <h1>ADIVINA EL NÚMERO <span class="accent">CYBER</span></h1>
+        <p class="instructions">Estoy pensando en un número del 1 al 100. ¡Adivina cuál es!</p>
+
+        <div class="timer-display">
+            Tiempo restante: <span id="timer">60</span> segundos
+        </div>
+
+        <div class="input-section">
+            <input type="number" id="guessInput" min="1" max="100" placeholder="Introduce tu número">
+            <button id="guessButton">PROBAR</button>
+        </div>
+
+        <div class="feedback-section">
+            <p id="feedbackMessage" class="message"></p>
+            <p id="previousGuesses" class="message">Intentos previos: </p>
+        </div>
+
+        <div class="game-over-screen">
+            <h2 id="gameOverTitle"></h2>
+            <p id="secretNumberDisplay"></p>
+            <button id="restartButton">REINICIAR JUEGO</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

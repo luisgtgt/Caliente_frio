@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="box">
+        <div class="title">
+            <h1>Frio o <span>caliente</span></h1>
+            <div class="crono">
+                <h3>El tiempo restantes es de <span id="tiemposegu">60</span></h3>
+                <h3>Adivina el numero de 1 a 100</h3>
+            </div>
+        </div>
+        <div class="input">
+            <input type="text" id="usuario">
+        </div>
+        <div class="button">
+            <button onclick="juego()">enter</button>
+            <div id="color"></div>
+        </div>
+        <div class="history">
+            <div class="h_box">
+                <p>Intentos:</p>
+                <p id="input_h"></p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="logic.js" defer></script>
+
+</html>

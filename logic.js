@@ -3,6 +3,7 @@ let valor = 60
 let color = document.getElementById('color')
 let historial = document.getElementById('input_h')
 let recargar = document.querySelector(".reset")
+let logro = false;
 //numero ramdon
 const generarAleatorio = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 let random = generarAleatorio(1, 100);
@@ -15,9 +16,15 @@ async function crono() {
     while (valor > 0) {
         valor = valor - 1
         tiempo.textContent = `${valor}`
+        if(logro){
+            break
+        }
         await segundo(1000);
     }
-    recargar.style.display ="flex"
+    if(!logro){
+        recargar.style.display ="flex"
+    }
+    
 
 }
 crono()
@@ -41,8 +48,9 @@ function juego() {
             color.innerHTML = '<h1>Caliente</h1>'
         }else if (usuario == random){
             color.innerHTML=''
-            color.style.backgroundColor = '#00ff88'
+            color.style.backgroundColor = '#00ff8838'
             color.innerHTML = '<h1>Lo lograste</h1>'
+            logro = true;
         }else{
             color.innerHTML=''
             color.style.backgroundColor = '#0008ff'

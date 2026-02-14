@@ -1,8 +1,10 @@
 *{
+    font-family: 'orbitron';
     margin: 0;
     padding: 0;
 }
 body{
+    position: relative;
     background-image: url(./ia/fondo.png);
     height: 100vh;
     place-content: center;
@@ -52,6 +54,55 @@ h1 {
     }
 }
 #color{
+    place-content: center;
+    place-items: center;
+    border-radius: 10px;
     width: 200px;
     height: 100px;
 }
+#input_h{
+    display: flex;
+}
+
+.reset{
+
+    display:none;
+    position: absolute;
+    flex-direction: column;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    place-items: center;
+    place-content:center; 
+    background: rgba(79, 14, 14, 0.4);
+    backdrop-filter: blur(12px);
+
+    
+}
+
+.secund-box{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    border: #00ffcc solid 1px;
+    border-radius: 20px;
+    place-content: center;
+    place-items: center;
+    background-color: rgba(210, 105, 30, 0.37);
+}
+
+.button{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    place-content: center;
+    place-items: center;
+
+}
+.h_box{
+    place-content: center;
+    place-items: center;
+    color: aqua;
+}
+

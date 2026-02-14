@@ -1,7 +1,8 @@
 let tiempo = document.getElementById('tiemposegu')
 let valor = 60
 let color = document.getElementById('color')
-
+let historial = document.getElementById('input_h')
+let recargar = document.querySelector(".reset")
 //numero ramdon
 const generarAleatorio = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 let random = generarAleatorio(1, 100);
@@ -16,15 +17,21 @@ async function crono() {
         tiempo.textContent = `${valor}`
         await segundo(1000);
     }
+    recargar.style.display ="flex"
+
 }
 crono()
+//insertar intentos
+function inserta(x){
+    historial = historial.textContent()
+}
 
 //compara numero 
 function juego() {
 
     let usuario = document.getElementById('usuario').value
     usuario = parseInt(usuario)
-
+    historial.innerHTML += `<p> ${usuario}, </p>`
     if ((usuario >= 1) || (usuario <= 100)) {
         let rampo = random + 10
         let rammi = random - 10
